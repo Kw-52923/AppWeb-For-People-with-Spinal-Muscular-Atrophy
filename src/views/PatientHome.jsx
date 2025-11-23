@@ -13,18 +13,18 @@ export const PatientHome = ({ navigate, userName = "Blaž" }) => {
     {
       id: 1,
       time: '10:00',
-      title: 'Medicación matutina ✓',
-      description: 'Spinraza - Completado',
+      title: 'Morning medication ✓',
+      description: 'Spinraza - Completed',
       status: 'completed'
     },
     {
       id: 2,
       time: '11:00',
-      title: 'Juego de Respiración 🐉',
-      description: '¡Ayuda al dragón a volar!',
+      title: 'Breathing Game 🐉',
+      description: 'Help the dragon fly!',
       status: 'active',
       action: {
-        label: 'Jugar ahora',
+        label: 'Play now',
         onClick: () => navigate('breathing'),
         icon: Play
       }
@@ -32,15 +32,15 @@ export const PatientHome = ({ navigate, userName = "Blaž" }) => {
     {
       id: 3,
       time: '14:00',
-      title: 'Cambio postural',
-      description: 'Recordatorio en 2h 45min',
+      title: 'Postural change',
+      description: 'Reminder in 2h 45min',
       status: 'upcoming'
     },
     {
       id: 4,
       time: '18:00',
-      title: 'Ejercicios de fisioterapia',
-      description: 'Sesión de 20 minutos',
+      title: 'Physiotherapy exercises',
+      description: '20-minute session',
       status: 'upcoming'
     }
   ];
@@ -50,7 +50,7 @@ export const PatientHome = ({ navigate, userName = "Blaž" }) => {
       {/* Header Emocional */}
       <div className="flex justify-between items-end px-2">
         <div>
-          <p className="text-slate-400 text-base sm:text-lg">Buenos días,</p>
+          <p className="text-slate-400 text-base sm:text-lg">Good morning,</p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-roche-blue to-vitality-purple bg-clip-text text-transparent">
             {userName}
           </h1>
@@ -69,7 +69,7 @@ export const PatientHome = ({ navigate, userName = "Blaž" }) => {
       {/* Mood Widget */}
       <Card variant="yellow" className="mb-4 sm:mb-6">
         <CardTitle className="mb-4 text-center sm:text-left">
-          ¿Cómo te sientes hoy?
+          How are you feeling today?
         </CardTitle>
         <CardContent>
           <MoodSelector 
@@ -87,8 +87,8 @@ export const PatientHome = ({ navigate, userName = "Blaž" }) => {
           onClick={() => navigate('breathing')} 
           className="h-32 sm:h-40 flex-col !gap-2 text-base sm:text-lg"
         >
-          Respiración
-          <span className="text-xs font-normal text-slate-400 block">Juego Dragón</span>
+          Breathing
+          <span className="text-xs font-normal text-slate-400 block">Dragon Game</span>
         </BigButton>
         
         <BigButton 
@@ -97,8 +97,8 @@ export const PatientHome = ({ navigate, userName = "Blaž" }) => {
           onClick={() => navigate('painmap')} 
           className="h-32 sm:h-40 flex-col !gap-2 text-base sm:text-lg"
         >
-          Mapa Dolor
-          <span className="text-xs font-normal text-slate-400 block">Registrar hoy</span>
+          Pain Map
+          <span className="text-xs font-normal text-slate-400 block">Record today</span>
         </BigButton>
 
         <BigButton 
@@ -107,8 +107,8 @@ export const PatientHome = ({ navigate, userName = "Blaž" }) => {
           onClick={() => navigate('socialfeed')} 
           className="h-32 sm:h-40 flex-col !gap-2 text-base sm:text-lg"
         >
-          Feed Social
-          <span className="text-xs font-normal text-slate-400 block">12 nuevos posts</span>
+          Social Feed
+          <span className="text-xs font-normal text-slate-400 block">12 new posts</span>
         </BigButton>
 
         <BigButton 
@@ -117,8 +117,8 @@ export const PatientHome = ({ navigate, userName = "Blaž" }) => {
           onClick={() => navigate('community')} 
           className="h-32 sm:h-40 flex-col !gap-2 text-base sm:text-lg"
         >
-          Comunidad
-          <span className="text-xs font-normal text-slate-400 block">3 eventos cerca</span>
+          Community
+          <span className="text-xs font-normal text-slate-400 block">3 nearby events</span>
         </BigButton>
       </div>
 
@@ -126,7 +126,7 @@ export const PatientHome = ({ navigate, userName = "Blaž" }) => {
       <Card variant="blue">
         <CardTitle className="flex items-center gap-2 mb-4">
           <Calendar className="w-5 h-5 sm:w-6 sm:h-6" />
-          Mi Vida Hoy
+          My Life Today
         </CardTitle>
         <CardContent>
           <Timeline items={timelineItems} />
@@ -138,19 +138,19 @@ export const PatientHome = ({ navigate, userName = "Blaž" }) => {
         <Card variant="default" className="p-4 sm:p-6 flex flex-col items-center gap-2">
           <div className="text-3xl sm:text-4xl">💊</div>
           <div className="text-2xl sm:text-3xl font-black text-roche-blue">95%</div>
-          <div className="text-xs sm:text-sm text-slate-500 font-semibold text-center">Adherencia</div>
+          <div className="text-xs sm:text-sm text-slate-500 font-semibold text-center">Adherence</div>
         </Card>
 
         <Card variant="default" className="p-4 sm:p-6 flex flex-col items-center gap-2">
           <div className="text-3xl sm:text-4xl">🎯</div>
           <div className="text-2xl sm:text-3xl font-black text-joy-orange">12</div>
-          <div className="text-xs sm:text-sm text-slate-500 font-semibold text-center">Racha días</div>
+          <div className="text-xs sm:text-sm text-slate-500 font-semibold text-center">Streak days</div>
         </Card>
 
         <Card variant="default" className="p-4 sm:p-6 flex flex-col items-center gap-2">
           <div className="text-3xl sm:text-4xl">🫁</div>
           <div className="text-2xl sm:text-3xl font-black text-growth-green">85dB</div>
-          <div className="text-xs sm:text-sm text-slate-500 font-semibold text-center">Fuerza resp.</div>
+          <div className="text-xs sm:text-sm text-slate-500 font-semibold text-center">Resp. strength</div>
         </Card>
       </div>
     </div>

@@ -33,10 +33,10 @@ export const BreathingGame = ({ navigate }) => {
     return (
       <div className="min-h-[80vh] flex flex-col items-center justify-center p-4 sm:p-6 text-center space-y-4 sm:space-y-6 animate-fade-in max-w-2xl mx-auto">
         <Trophy size={window.innerWidth < 640 ? 64 : 80} className="text-joy-yellow animate-bounce" />
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800">¡Increíble!</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-800">Incredible!</h2>
         
         <Card className="w-full">
-          <p className="text-slate-500 mb-2 text-sm sm:text-base">Fuerza Pulmonar Estimada</p>
+          <p className="text-slate-500 mb-2 text-sm sm:text-base">Estimated Pulmonary Force</p>
           <p className="text-4xl sm:text-5xl md:text-6xl font-black text-roche-blue">
             92<span className="text-xl sm:text-2xl text-slate-400">dB</span>
           </p>
@@ -44,13 +44,13 @@ export const BreathingGame = ({ navigate }) => {
             <div className="h-full bg-gradient-to-r from-green-500 to-growth-green w-[92%] transition-all duration-1000"></div>
           </div>
           <p className="text-xs sm:text-sm text-slate-400 mt-4 bg-slate-50 p-3 rounded-xl">
-            ✅ Datos encriptados y enviados al registro de Roche.
+            ✅ Data encrypted and sent to Roche registry.
           </p>
         </Card>
         
         <div className="w-full space-y-3">
           <BigButton onClick={() => navigate('home')} variant="primary">
-            Volver al Inicio
+            Back to Home
           </BigButton>
         </div>
       </div>
@@ -64,13 +64,13 @@ export const BreathingGame = ({ navigate }) => {
         <button 
           onClick={() => navigate('home')} 
           className="p-2 sm:p-3 bg-white hover:bg-slate-100 rounded-full shadow-md transition-colors min-h-touch min-w-touch flex items-center justify-center"
-          aria-label="Volver al inicio"
+          aria-label="Back to home"
         >
           <ArrowLeft size={window.innerWidth < 640 ? 20 : 24} />
         </button>
         <div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">Terapia Dragón</h2>
-          <p className="text-sm sm:text-base text-slate-500">Sopla para hacer volar al dragón</p>
+          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900">Dragon Therapy</h2>
+          <p className="text-sm sm:text-base text-slate-500">Blow to make the dragon fly</p>
         </div>
       </div>
 
@@ -101,7 +101,7 @@ export const BreathingGame = ({ navigate }) => {
       {/* Controles y Métricas */}
       <div className="space-y-3 sm:space-y-4">
         <div className="flex justify-between text-sm sm:text-base font-bold text-slate-600 px-2">
-          <span>Potencia</span>
+          <span>Power</span>
           <span className="text-roche-blue">{Math.round(score)}%</span>
         </div>
         
@@ -129,11 +129,11 @@ export const BreathingGame = ({ navigate }) => {
           aria-label="Presiona y mantén para soplar"
         >
           <Mic size={window.innerWidth < 640 ? 24 : 32} className={isBlowing ? 'animate-pulse' : ''} />
-          {isBlowing ? '💨 SOPLANDO...' : 'MANTÉN PARA SOPLAR'}
+          {isBlowing ? '💨 BLOWING...' : 'HOLD TO BLOW'}
         </button>
         
         <p className="text-center text-xs sm:text-sm text-slate-500 px-4">
-          💡 Presiona y mantén el botón, o sopla al micrófono si das permiso
+          💡 Press and hold the button, or blow into the microphone if you give permission
         </p>
       </div>
     </div>

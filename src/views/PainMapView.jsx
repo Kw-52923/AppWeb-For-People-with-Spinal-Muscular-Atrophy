@@ -5,8 +5,8 @@ import { Card, CardContent } from '../components/Card';
 
 // Mock data de reportes anteriores
 const mockReports = [
-  { id: 1, zone: 'shoulder-left', type: 'Dolor', intensity: 7, date: '2024-11-20' },
-  { id: 2, zone: 'back', type: 'Rigidez', intensity: 5, date: '2024-11-21' },
+  { id: 1, zone: 'shoulder-left', type: 'Pain', intensity: 7, date: '2024-11-20' },
+  { id: 2, zone: 'back', type: 'Stiffness', intensity: 5, date: '2024-11-21' },
 ];
 
 export function PainMapView({ navigate }) {
@@ -17,18 +17,18 @@ export function PainMapView({ navigate }) {
   const [reports, setReports] = useState(mockReports);
 
   const bodyZones = [
-    { id: 'head', name: 'Cabeza', x: 150, y: 50, r: 30 },
-    { id: 'neck', name: 'Cuello', x: 150, y: 100, r: 20 },
-    { id: 'shoulder-left', name: 'Hombro Izq.', x: 110, y: 130, r: 25 },
-    { id: 'shoulder-right', name: 'Hombro Der.', x: 190, y: 130, r: 25 },
-    { id: 'chest', name: 'Pecho', x: 150, y: 160, r: 40 },
-    { id: 'back', name: 'Espalda', x: 150, y: 200, r: 45 },
-    { id: 'arm-left', name: 'Brazo Izq.', x: 90, y: 180, r: 20 },
-    { id: 'arm-right', name: 'Brazo Der.', x: 210, y: 180, r: 20 },
+    { id: 'head', name: 'Head', x: 150, y: 50, r: 30 },
+    { id: 'neck', name: 'Neck', x: 150, y: 100, r: 20 },
+    { id: 'shoulder-left', name: 'Left Shoulder', x: 110, y: 130, r: 25 },
+    { id: 'shoulder-right', name: 'Right Shoulder', x: 190, y: 130, r: 25 },
+    { id: 'chest', name: 'Chest', x: 150, y: 160, r: 40 },
+    { id: 'back', name: 'Back', x: 150, y: 200, r: 45 },
+    { id: 'arm-left', name: 'Left Arm', x: 90, y: 180, r: 20 },
+    { id: 'arm-right', name: 'Right Arm', x: 210, y: 180, r: 20 },
     { id: 'abdomen', name: 'Abdomen', x: 150, y: 240, r: 35 },
-    { id: 'hip', name: 'Cadera', x: 150, y: 280, r: 40 },
-    { id: 'leg-left', name: 'Pierna Izq.', x: 120, y: 350, r: 25 },
-    { id: 'leg-right', name: 'Pierna Der.', x: 180, y: 350, r: 25 },
+    { id: 'hip', name: 'Hip', x: 150, y: 280, r: 40 },
+    { id: 'leg-left', name: 'Left Leg', x: 120, y: 350, r: 25 },
+    { id: 'leg-right', name: 'Right Leg', x: 180, y: 350, r: 25 },
   ];
 
   const handleZoneClick = (zone) => {
@@ -40,7 +40,7 @@ export function PainMapView({ navigate }) {
 
   const handleSubmit = () => {
     if (!symptomType) {
-      alert('Por favor selecciona el tipo de síntoma');
+      alert('Please select the type of symptom');
       return;
     }
 
@@ -57,7 +57,7 @@ export function PainMapView({ navigate }) {
     
     // Mostrar confirmación
     setTimeout(() => {
-      alert(`✅ Reporte enviado a tu Cuidador y añadido al historial médico`);
+      alert(`✅ Report sent to your Caregiver and added to medical history`);
     }, 300);
   };
 
@@ -76,8 +76,8 @@ export function PainMapView({ navigate }) {
           <ArrowLeft size={24} />
         </button>
         <div>
-          <h2 className="text-2xl sm:text-3xl font-bold">🗺️ Mapa de Dolor</h2>
-          <p className="text-gray-600">Toca la zona con molestias</p>
+          <h2 className="text-2xl sm:text-3xl font-bold">🗺️ Pain Map</h2>
+          <p className="text-gray-600">Tap the area with discomfort</p>
         </div>
       </div>
 
@@ -87,9 +87,9 @@ export function PainMapView({ navigate }) {
           <div className="flex gap-3 items-start">
             <AlertCircle className="w-6 h-6 text-joy-yellow flex-shrink-0 mt-1" />
             <div>
-              <p className="font-semibold mb-1">Registro para seguimiento médico</p>
+              <p className="font-semibold mb-1">Record for medical tracking</p>
               <p className="text-sm text-gray-600">
-                Esta información se comparte automáticamente con tu cuidador y se guarda en tu historial.
+                This information is automatically shared with your caregiver and saved in your history.
               </p>
             </div>
           </div>
@@ -154,7 +154,7 @@ export function PainMapView({ navigate }) {
       {/* Historial de Reportes */}
       {reports.length > 0 && (
         <div className="bg-white rounded-3xl shadow-md p-6">
-          <h3 className="font-bold text-lg mb-4">📋 Historial Reciente</h3>
+          <h3 className="font-bold text-lg mb-4">📋 Recent History</h3>
           <div className="space-y-3">
             {reports.slice(-3).reverse().map((report) => {
               const zone = bodyZones.find(z => z.id === report.zone);
@@ -191,9 +191,9 @@ export function PainMapView({ navigate }) {
 
             {/* Tipo de Síntoma */}
             <div className="mb-6">
-              <label className="block font-semibold mb-3">¿Qué sientes?</label>
+              <label className="block font-semibold mb-3">What do you feel?</label>
               <div className="grid grid-cols-3 gap-3">
-                {['Dolor', 'Debilidad', 'Rigidez'].map((type) => (
+                {['Pain', 'Weakness', 'Stiffness'].map((type) => (
                   <button
                     key={type}
                     onClick={() => setSymptomType(type)}
@@ -205,9 +205,9 @@ export function PainMapView({ navigate }) {
                       }
                     `}
                   >
-                    {type === 'Dolor' && '😣'}
-                    {type === 'Debilidad' && '💤'}
-                    {type === 'Rigidez' && '🔒'}
+                    {type === 'Pain' && '😣'}
+                    {type === 'Weakness' && '💤'}
+                    {type === 'Stiffness' && '🔒'}
                     <br />
                     <span className="text-sm">{type}</span>
                   </button>
@@ -233,9 +233,9 @@ export function PainMapView({ navigate }) {
                 }}
               />
               <div className="flex justify-between text-xs text-gray-500 mt-2">
-                <span>Leve</span>
-                <span>Moderado</span>
-                <span>Severo</span>
+                <span>Mild</span>
+                <span>Moderate</span>
+                <span>Severe</span>
               </div>
             </div>
 
@@ -247,14 +247,14 @@ export function PainMapView({ navigate }) {
                 onClick={handleSubmit}
                 disabled={!symptomType}
               >
-                Guardar Reporte
+                Save Report
               </BigButton>
               <BigButton 
                 variant="ghost" 
                 fullWidth 
                 onClick={() => setModalOpen(false)}
               >
-                Cancelar
+                Cancel
               </BigButton>
             </div>
           </div>

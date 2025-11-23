@@ -40,26 +40,26 @@ export function CaregiverSetup({ onComplete }) {
           <CardHeader>
             <CardTitle className="flex items-center gap-3">
               <Link2 className="w-8 h-8" />
-              Vincular con Paciente
+              Link with Patient
             </CardTitle>
           </CardHeader>
           
           <CardContent>
             <p className="text-gray-600 mb-8">
-              Busca al paciente que vas a cuidar para vincularte
+              Search for the patient you will care for to link
             </p>
 
             {/* Nombre del Cuidador */}
             <div className="mb-8">
               <label className="block text-lg font-semibold mb-3 flex items-center gap-2">
                 <User className="w-5 h-5" />
-                Tu Nombre (Cuidador)
+                Your Name (Caregiver)
               </label>
               <input
                 type="text"
                 value={caregiverName}
                 onChange={(e) => setCaregiverName(e.target.value)}
-                placeholder="Ej. Dr. Pedro Ramírez"
+                placeholder="E.g. Dr. Pedro Ramirez"
                 className="w-full px-6 py-4 text-xl border-2 border-gray-300 rounded-2xl focus:border-vitality-purple focus:outline-none transition-colors"
               />
             </div>
@@ -71,7 +71,7 @@ export function CaregiverSetup({ onComplete }) {
                 type="text"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
-                placeholder="Buscar por nombre de usuario o nombre completo"
+                placeholder="Search by username or full name"
                 className="w-full pl-14 pr-6 py-4 text-lg border-2 border-gray-300 rounded-2xl focus:border-roche-blue focus:outline-none transition-colors"
               />
             </div>
@@ -81,8 +81,8 @@ export function CaregiverSetup({ onComplete }) {
               {filteredPatients.length === 0 ? (
                 <div className="text-center py-12 text-gray-400">
                   <Search className="w-16 h-16 mx-auto mb-4 opacity-50" />
-                  <p className="text-lg">No se encontraron pacientes</p>
-                  <p className="text-sm mt-2">Intenta con otro término de búsqueda</p>
+                  <p className="text-lg">No patients found</p>
+                  <p className="text-sm mt-2">Try a different search term</p>
                 </div>
               ) : (
                 filteredPatients.map((patient) => (
@@ -108,9 +108,9 @@ export function CaregiverSetup({ onComplete }) {
                         </div>
                         <p className="text-gray-600">@{patient.username}</p>
                         <div className="flex gap-3 mt-2 text-sm text-gray-500">
-                          <span>{patient.age} años</span>
+                          <span>{patient.age} years</span>
                           <span>•</span>
-                          <span>SMA Tipo {patient.smaType}</span>
+                          <span>SMA Type {patient.smaType}</span>
                         </div>
                       </div>
                     </div>
@@ -127,14 +127,14 @@ export function CaregiverSetup({ onComplete }) {
               disabled={!selectedPatient || !caregiverName.trim()}
             >
               {selectedPatient 
-                ? `Vincularme con ${selectedPatient.name}`
-                : 'Selecciona un paciente'
+                ? `Link with ${selectedPatient.name}`
+                : 'Select a patient'
               }
             </BigButton>
 
             {selectedPatient && (
               <p className="text-sm text-gray-500 mt-4 text-center">
-                Se enviará una notificación a {selectedPatient.name} para confirmar
+                A notification will be sent to {selectedPatient.name} for confirmation
               </p>
             )}
           </CardContent>

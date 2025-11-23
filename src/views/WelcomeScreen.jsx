@@ -14,14 +14,14 @@ export function WelcomeScreen({ onSelectRole }) {
             SMA LifeLink
           </h1>
           <p className="text-xl text-white/90">
-            Tu compañero digital para vivir mejor con SMA
+            Your digital companion for living better with SMA
           </p>
         </div>
 
         {/* Selección de Rol */}
         <div className="bg-white/95 backdrop-blur-sm rounded-3xl p-8 shadow-2xl animate-slide-in">
           <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">
-            ¿Cómo vas a usar la aplicación?
+            How will you use the app?
           </h2>
           
           <div className="space-y-4">
@@ -31,7 +31,7 @@ export function WelcomeScreen({ onSelectRole }) {
               onClick={() => onSelectRole('patient')}
               fullWidth
             >
-              Soy Paciente
+              I'm a Patient
             </BigButton>
 
             <BigButton
@@ -40,19 +40,19 @@ export function WelcomeScreen({ onSelectRole }) {
               onClick={() => onSelectRole('caregiver')}
               fullWidth
             >
-              Soy Cuidador
+              I'm a Caregiver
             </BigButton>
           </div>
 
           <p className="text-sm text-gray-500 mt-6 text-center">
-            Podrás cambiar esto después en la configuración
+            You can change this later in settings
           </p>
         </div>
 
         {/* Footer */}
         <div className="text-center mt-8 text-white/80 text-sm">
-          <p>Desarrollado con ❤️ para la comunidad SMA</p>
-          <p className="mt-2">En colaboración con Roche</p>
+          <p>Developed with ❤️ for the SMA community</p>
+          <p className="mt-2">In collaboration with Roche</p>
         </div>
       </div>
     </div>

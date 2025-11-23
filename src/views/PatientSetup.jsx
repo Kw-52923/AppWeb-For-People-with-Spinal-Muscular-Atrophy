@@ -25,13 +25,13 @@ export function PatientSetup({ onComplete }) {
           <CardHeader>
             <CardTitle className="flex items-center gap-3">
               <User className="w-8 h-8" />
-              Configuración Inicial
+              Initial Setup
             </CardTitle>
           </CardHeader>
           
           <CardContent>
             <p className="text-gray-600 mb-8">
-              Configura tu perfil para personalizar la experiencia
+              Configure your profile to personalize your experience
             </p>
 
             <div className="space-y-8">
@@ -39,13 +39,13 @@ export function PatientSetup({ onComplete }) {
               <div>
                 <label className="block text-lg font-semibold mb-3 flex items-center gap-2">
                   <User className="w-5 h-5" />
-                  Tu Nombre
+                  Your Name
                 </label>
                 <input
                   type="text"
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
-                  placeholder="Ej. María González"
+                  placeholder="E.g. Maria Gonzalez"
                   className="w-full px-6 py-4 text-xl border-2 border-gray-300 rounded-2xl focus:border-roche-blue focus:outline-none transition-colors"
                 />
               </div>
@@ -55,9 +55,9 @@ export function PatientSetup({ onComplete }) {
                 <label className="block text-lg font-semibold mb-3 flex items-center gap-2 justify-between">
                   <span className="flex items-center gap-2">
                     <Activity className="w-5 h-5" />
-                    Edad
+                    Age
                   </span>
-                  <span className="text-3xl font-bold text-roche-blue">{formData.age} años</span>
+                  <span className="text-3xl font-bold text-roche-blue">{formData.age} years</span>
                 </label>
                 <input
                   type="range"
@@ -77,7 +77,7 @@ export function PatientSetup({ onComplete }) {
                 <label className="block text-lg font-semibold mb-3 flex items-center gap-2 justify-between">
                   <span className="flex items-center gap-2">
                     <Weight className="w-5 h-5" />
-                    Peso
+                    Weight
                   </span>
                   <span className="text-3xl font-bold text-growth-green">{formData.weight} kg</span>
                 </label>
@@ -99,7 +99,7 @@ export function PatientSetup({ onComplete }) {
                 <label className="block text-lg font-semibold mb-3 flex items-center gap-2 justify-between">
                   <span className="flex items-center gap-2">
                     <Ruler className="w-5 h-5" />
-                    Altura
+                    Height
                   </span>
                   <span className="text-3xl font-bold text-vitality-purple">{formData.height} cm</span>
                 </label>
@@ -119,7 +119,7 @@ export function PatientSetup({ onComplete }) {
               {/* Tipo de SMA */}
               <div>
                 <label className="block text-lg font-semibold mb-4">
-                  Tipo de SMA
+                  SMA Type
                 </label>
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   {[1, 2, 3, 4].map((type) => (
@@ -134,12 +134,12 @@ export function PatientSetup({ onComplete }) {
                         }
                       `}
                     >
-                      Tipo {type}
+                      Type {type}
                     </button>
                   ))}
                 </div>
                 <p className="text-sm text-gray-500 mt-3">
-                  Esto nos ayuda a personalizar recomendaciones y seguimiento
+                  This helps us personalize recommendations and tracking
                 </p>
               </div>
             </div>
@@ -152,7 +152,7 @@ export function PatientSetup({ onComplete }) {
                 fullWidth
                 disabled={!formData.name.trim()}
               >
-                Continuar
+                Continue
               </BigButton>
             </div>
           </CardContent>

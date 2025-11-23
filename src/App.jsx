@@ -64,9 +64,9 @@ function App() {
     }
   };
 
-  // Función para cerrar sesión
+  // Function to log out
   const handleLogout = () => {
-    if (window.confirm('¿Estás seguro de que quieres cerrar sesión?')) {
+    if (window.confirm('Are you sure you want to log out?')) {
       localStorage.removeItem('userRole');
       localStorage.removeItem('patientData');
       localStorage.removeItem('caregiverData');
@@ -106,12 +106,12 @@ function App() {
         <div className="fixed inset-0 bg-gradient-to-br from-red-600 to-red-900 z-[9000] flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 text-center animate-pulse-slow">
             <AlertTriangle size={isMobile ? 80 : 120} className="text-white mb-4 sm:mb-6 animate-bounce" />
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-3 sm:mb-4">
-              ¡ALERTA ENVIADA!
+              ALERT SENT!
             </h1>
             <p className="text-white text-base sm:text-lg md:text-xl opacity-90 mb-8 sm:mb-12 max-w-2xl">
-              Tus cuidadores han recibido tu ubicación GPS.
+              Your caregivers have received your GPS location.
               <br className="hidden sm:block" />
-              <span className="block mt-2">Llamando al 112 en 5s...</span>
+              <span className="block mt-2">Calling 112 in 5s...</span>
             </p>
             
             {/* Simulación de notificaciones enviadas */}
@@ -119,15 +119,15 @@ function App() {
               <div className="space-y-3 text-left">
                 <div className="flex items-center gap-3 text-white">
                   <Check className="text-green-300" size={20} />
-                  <span className="text-sm sm:text-base">📱 María (Mamá) - Notificada</span>
+                  <span className="text-sm sm:text-base">📱 María (Mom) - Notified</span>
                 </div>
                 <div className="flex items-center gap-3 text-white">
                   <Check className="text-green-300" size={20} />
-                  <span className="text-sm sm:text-base">📱 Juan (Papá) - Notificado</span>
+                  <span className="text-sm sm:text-base">📱 Juan (Dad) - Notified</span>
                 </div>
                 <div className="flex items-center gap-3 text-white">
                   <div className="w-5 h-5 border-2 border-white rounded-full animate-spin" />
-                  <span className="text-sm sm:text-base">🚑 Emergencias - Conectando...</span>
+                  <span className="text-sm sm:text-base">🚑 Emergency - Connecting...</span>
                 </div>
               </div>
             </div>
@@ -136,7 +136,7 @@ function App() {
               onClick={() => setEmergencyActive(false)}
               className="bg-white text-red-600 px-6 sm:px-10 py-4 sm:py-5 rounded-full font-bold text-base sm:text-lg md:text-xl shadow-2xl hover:scale-105 active:scale-95 transition-transform min-h-touch"
             >
-              FALSA ALARMA (Cancelar)
+              FALSE ALARM (Cancel)
             </button>
         </div>
       )}
@@ -174,16 +174,16 @@ function App() {
                     {!isMobile && (
                       <nav className="flex gap-2 items-center">
                         <button onClick={() => navigate(userRole === 'patient' ? 'home' : 'carehub')} className={`px-4 py-2 rounded-xl transition-all ${(screen === 'home' || screen === 'carehub') ? 'bg-white/20' : 'hover:bg-white/10'}`}>
-                          <Home className="w-5 h-5 inline mr-2" /> Inicio
+                          <Home className="w-5 h-5 inline mr-2" /> Home
                         </button>
                         <button onClick={() => navigate('medication')} className={`px-4 py-2 rounded-xl transition-all ${screen === 'medication' ? 'bg-white/20' : 'hover:bg-white/10'}`}>
-                          <Pill className="w-5 h-5 inline mr-2" /> Medicación
+                          <Pill className="w-5 h-5 inline mr-2" /> Medication
                         </button>
                         <button onClick={() => navigate('community')} className={`px-4 py-2 rounded-xl transition-all ${screen === 'community' ? 'bg-white/20' : 'hover:bg-white/10'}`}>
-                          <Globe className="w-5 h-5 inline mr-2" /> Comunidad
+                          <Globe className="w-5 h-5 inline mr-2" /> Community
                         </button>
                         <button onClick={() => navigate('profile')} className={`px-4 py-2 rounded-xl transition-all ${screen === 'profile' ? 'bg-white/20' : 'hover:bg-white/10'}`}>
-                          <User className="w-5 h-5 inline mr-2" /> Perfil
+                          <User className="w-5 h-5 inline mr-2" /> Profile
                         </button>
                         <button onClick={handleLogout} className="px-4 py-2 rounded-xl hover:bg-red-500/20 transition-all">
                           <LogOut className="w-5 h-5" />
@@ -214,11 +214,11 @@ function App() {
 
                 {/* Navbar Inferior */}
                 <nav className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-md border-t border-slate-200 px-2 sm:px-4 py-2 sm:py-3 flex justify-around z-40 shadow-2xl">
-                  <NavIcon active={screen === 'home' || screen === 'carehub'} label="Inicio" icon={Home} onClick={() => navigate(userRole === 'patient' ? 'home' : 'carehub')} />
-                  <NavIcon active={screen === 'painmap'} label="Mapa Dolor" icon={Activity} onClick={() => navigate('painmap')} />
-                  <NavIcon active={screen === 'medication'} label="Medicación" icon={Pill} onClick={() => navigate('medication')} />
-                  <NavIcon active={screen === 'community'} label="Comunidad" icon={Globe} onClick={() => navigate('community')} />
-                  <NavIcon active={screen === 'profile'} label="Perfil" icon={User} onClick={() => navigate('profile')} />
+                  <NavIcon active={screen === 'home' || screen === 'carehub'} label="Home" icon={Home} onClick={() => navigate(userRole === 'patient' ? 'home' : 'carehub')} />
+                  <NavIcon active={screen === 'painmap'} label="Pain Map" icon={Activity} onClick={() => navigate('painmap')} />
+                  <NavIcon active={screen === 'medication'} label="Medication" icon={Pill} onClick={() => navigate('medication')} />
+                  <NavIcon active={screen === 'community'} label="Community" icon={Globe} onClick={() => navigate('community')} />
+                  <NavIcon active={screen === 'profile'} label="Profile" icon={User} onClick={() => navigate('profile')} />
                 </nav>
              </div>
           )}
@@ -248,7 +248,7 @@ const NavIcon = ({ label, active, icon: Icon, onClick }) => (
 // Mock para Medicación
 const MedicationMock = ({ navigate }) => (
   <div className="max-w-4xl mx-auto">
-    <h2 className="text-2xl sm:text-3xl font-bold mb-6">💊 Mi Medicación</h2>
+    <h2 className="text-2xl sm:text-3xl font-bold mb-6">💊 My Medication</h2>
     <div className="space-y-4">
       <div className="bg-white p-6 rounded-2xl shadow-md border-2 border-growth-green/20">
         <div className="flex items-center justify-between">
@@ -277,7 +277,7 @@ const MedicationMock = ({ navigate }) => (
       </div>
     </div>
     <div className="mt-6">
-      <BigButton variant="accent" fullWidth>+ Añadir Medicamento</BigButton>
+      <BigButton variant="accent" fullWidth>+ Add Medication</BigButton>
     </div>
   </div>
 );
@@ -285,7 +285,7 @@ const MedicationMock = ({ navigate }) => (
 // Mock para Perfil
 const ProfileMock = ({ navigate, userData, userRole, onLogout }) => (
   <div className="max-w-4xl mx-auto">
-    <h2 className="text-2xl sm:text-3xl font-bold mb-6">👤 Mi Perfil</h2>
+    <h2 className="text-2xl sm:text-3xl font-bold mb-6">👤 My Profile</h2>
     <div className="bg-white p-6 rounded-2xl shadow-md mb-6">
       <div className="flex items-center gap-4 mb-6">
         <div className="w-20 h-20 bg-gradient-to-br from-roche-blue to-vitality-purple rounded-full flex items-center justify-center text-3xl">
@@ -296,7 +296,7 @@ const ProfileMock = ({ navigate, userData, userRole, onLogout }) => (
             {userRole === 'patient' ? userData?.name : userData?.caregiverName}
           </h3>
           <p className="text-gray-600">
-            {userRole === 'patient' ? 'Paciente' : 'Cuidador'}
+            {userRole === 'patient' ? 'Patient' : 'Caregiver'}
           </p>
         </div>
       </div>
@@ -304,19 +304,19 @@ const ProfileMock = ({ navigate, userData, userRole, onLogout }) => (
       {userRole === 'patient' && userData && (
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-gray-50 p-4 rounded-xl">
-            <p className="text-sm text-gray-600">Edad</p>
-            <p className="text-2xl font-bold">{userData.age} años</p>
+            <p className="text-sm text-gray-600">Age</p>
+            <p className="text-2xl font-bold">{userData.age} years</p>
           </div>
           <div className="bg-gray-50 p-4 rounded-xl">
-            <p className="text-sm text-gray-600">Tipo SMA</p>
-            <p className="text-2xl font-bold">Tipo {userData.smaType}</p>
+            <p className="text-sm text-gray-600">SMA Type</p>
+            <p className="text-2xl font-bold">Type {userData.smaType}</p>
           </div>
           <div className="bg-gray-50 p-4 rounded-xl">
-            <p className="text-sm text-gray-600">Peso</p>
+            <p className="text-sm text-gray-600">Weight</p>
             <p className="text-2xl font-bold">{userData.weight} kg</p>
           </div>
           <div className="bg-gray-50 p-4 rounded-xl">
-            <p className="text-sm text-gray-600">Altura</p>
+            <p className="text-sm text-gray-600">Height</p>
             <p className="text-2xl font-bold">{userData.height} cm</p>
           </div>
         </div>
@@ -324,7 +324,7 @@ const ProfileMock = ({ navigate, userData, userRole, onLogout }) => (
       
       {userRole === 'caregiver' && userData?.linkedPatient && (
         <div className="bg-blue-50 p-4 rounded-xl">
-          <p className="text-sm text-gray-600 mb-2">Paciente vinculado</p>
+          <p className="text-sm text-gray-600 mb-2">Linked patient</p>
           <div className="flex items-center gap-3">
             <span className="text-2xl">{userData.linkedPatient.avatar}</span>
             <div>
@@ -337,7 +337,7 @@ const ProfileMock = ({ navigate, userData, userRole, onLogout }) => (
     </div>
     
     <BigButton variant="danger" fullWidth onClick={onLogout}>
-      <LogOut className="w-5 h-5 inline mr-2" /> Cerrar Sesión
+      <LogOut className="w-5 h-5 inline mr-2" /> Log Out
     </BigButton>
   </div>
 );
