@@ -103,12 +103,12 @@ Este es un **prototipo funcional MVP** desarrollado en 48 horas. No todas las ca
 
 ## 👥 Equipo
 Proyecto desarrollado por:
-- [Manu Cabello](https://github.com/https://github.com/ManuCodello)
-- [Matias Espinola](https://github.com/https://github.com/espinola-matias) 
-- [Keila Gonzalez](https://github.com/https://github.com/espinola-matias) 
-- [Sebas Mujica](https://github.com/https://github.com/sebasmujica)
-- [Maxi Orué](https://github.com/https://github.com/MaxiOru) 
-- [Gaston Duarte](https://github.com/https://github.com/gastonduartem) 
+- [Manu Cabello](https://github.com/ManuCodello)
+- [Matias Espinola](https://github.com/espinola-matias) 
+- [Keila Gonzalez](https://github.com/espinola-matias) 
+- [Sebas Mujica](https://github.com/sebasmujica)
+- [Maxi Orué](https://github.com/MaxiOru) 
+- [Gaston Duarte](https://github.com/gastonduartem) 
 
 ## 🔒 Consideraciones de Privacidad
 
