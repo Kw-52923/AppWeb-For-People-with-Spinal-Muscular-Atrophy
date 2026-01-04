@@ -7,7 +7,7 @@
 
 Solución tecnológica para mejorar la calidad de vida de personas con Atrofia Muscular Espinal (SMA), desarrollada en 48 horas durante la Roche Hackathon 2025.
 
-**Posición:** Top 6 finalistas
+
 
 ## 💡 El Desafío
 
